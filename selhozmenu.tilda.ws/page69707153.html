@@ -575,16 +575,18 @@
             }
             .product-item {
                 display: grid;
-                grid-template-columns: 100px 1fr auto auto;
+                grid-template-columns: 85px 1fr auto auto;
                 grid-template-rows: auto auto;
-                gap: 0px 15px;
+                gap: 0px 2px;
                 align-items: center;
                 position: relative;
                 padding: 15px 0;
+                width: 100%;
+                max-width: 100%;
             }
             .product-image {
-                width: 85px;
-                height: 120px;
+                width: 78px;
+                height: 104px;
                 aspect-ratio: 4 / 3;
                 grid-row: span 2;
                 margin: 0;
@@ -595,7 +597,7 @@
             .product-name {
                 grid-column: 2 / span 3;
                 grid-row: 1;
-                font-size: 18px;
+                font-size: 16px;
                 margin-right: 0;
                 max-width: none;
                 align-self: center;
@@ -804,17 +806,17 @@
         <img src="../assets/images/img_group_1135.svg" alt="Company Logo" class="logo2" />
         <nav class="nav-menu" id="navMenu">
             <a href="index.html" class="nav-link">ГЛАВНАЯ</a>
-            <a href="page69666941.html" class="nav-link">О НАС</a>
+            <a href="page69666941.html" class="nav-link"><nobr>О НАС</nobr></a>
             <a href="page69666967.html" class="nav-link">КАТАЛОГ</a>
             <a href="page69738929.html" class="nav-link">КОНТАКТЫ</a>
-            <div class="phone">+ 7 (996) 975-97-71</div>
+            <div class="phone"><nobr>+ 7 (996) 975-97-71</nobr></div>
         </nav>
         <img src="../assets/images/img_vector.svg" alt="Shopping Cart" class="cart-icon" />
     </header>
     <div class="mobile-menu" id="mobileMenu">
         <span class="menu-close" id="closeMenu"></span>
         <a href="index.html" class="nav-link">Главная</a>
-        <a href="page69666941.html" class="nav-link">О нас</a>
+        <a href="page69666941.html" class="nav-link"><nobr>О нас</nobr></a>
         <a href="page69666967.html" class="nav-link">Каталог</a>
         <a href="page69738929.html" class="nav-link">Контакты</a>
     </div>
@@ -846,10 +848,10 @@
             <div class="footer-nav">
                 <img src="../assets/images/img_rectangle.png" alt="Logo" class="footer-logo" />
                 <a href="index.html" class="footer-link">ГЛАВНАЯ</a>
-                <a href="page69666941.html" class="footer-link">О НАС</a>
+                <a href="page69666941.html" class="footer-link"><nobr>О НАС</nobr></a>
                 <a href="page69666967.html" class="footer-link">КАТАЛОГ</a>
                 <a href="page69738929.html" class="footer-link">КОНТАКТЫ</a>
-                <div class="footer-phone">+ 7 (996) 975-97-71</div>
+                <div class="footer-phone"><nobr>+ 7 (996) 975-97-71</nobr></div>
             </div>
             <div class="footer-divider-bottom"></div>
             <div class="footer-bottom">
@@ -969,13 +971,13 @@
             const originalText = orderBtn.innerHTML;
             orderBtn.innerHTML = '<span class="order-btn-text">Оформляем...</span>';
             orderBtn.disabled = true;
-            setTimeout(() => {
-                cartItems = {};
-                localStorage.setItem('cart', JSON.stringify(cartItems));
-                renderCart();
-                orderBtn.innerHTML = originalText;
-                orderBtn.disabled = false;
-            }, 1500);
+            
+            // Очищаем корзину
+            cartItems = {};
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+            
+            // Переходим на страницу заказа
+            window.location.href = 'order.html';
         }
         document.addEventListener('DOMContentLoaded', renderCart);
         document.querySelectorAll('.quantity-btn, .remove-btn').forEach(btn => {
