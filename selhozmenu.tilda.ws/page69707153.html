@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no">
     <title>Корзина</title>
     <link rel="preconnect" href="https://fonts.googleapis.com"   />
     <link rel="preconnect" href="https://fonts.gstatic.com"   crossorigin />
@@ -355,9 +356,9 @@
             font-size: 18px;
             font-weight: 500;
             line-height: 22px;
-            color: #ffffff;
+            color: #ffffff !important;
             margin-left: auto;
-            text-decoration: none;
+            text-decoration: none !important;
         }
         .footer-divider-bottom {
             width: 100%;
@@ -400,6 +401,9 @@
         }
         .social-icon:hover {
             transform: scale(1.1);
+        }
+        .decrease-btn {
+            padding-bottom: 10px;
         }
         @media (max-width: 1200px) {
             .yellow-accent-left {
@@ -646,9 +650,13 @@
                 margin: 0 auto 20px;
             }
             .footer-phone {
-                margin: 20px auto;
+                font-family: 'Montserrat', Arial, sans-serif;
+                text-decoration: none !important;
+                color: #ffffff !important;
                 text-align: center;
                 width: 100%;
+                margin: 0;
+                font-size: 15px;
             }
             .footer-divider-bottom {
                 display: none;
@@ -667,10 +675,6 @@
             }
             .footer-link {
                 font-size: 13px;
-            }
-            .footer-phone {
-                margin: 0;
-                font-size: 15px;
             }
             .footer-bottom-link {
                 font-size: 10px;
